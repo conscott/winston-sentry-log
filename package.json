@@ -1,12 +1,12 @@
 {
-  "name": "winston-sentry-log",
+  "name": "winston-sentry-log-conscott",
   "version": "1.0.12",
   "description": "Winston transport for @Sentry/node",
   "main": "dist/index.js",
   "author": "Francisco Sales",
   "repository": {
     "type": "git",
-    "url": "https://github.com/franciscofsales/winston-sentry-log"
+    "url": "https://github.com/conscott/winston-sentry-log"
   },
   "license": "MIT",
   "keywords": [
@@ -27,7 +27,7 @@
     "node": ">= 6.4.0"
   },
   "dependencies": {
-    "@sentry/node": "^5.6.2",
+    "@sentry/node": "^5.15.4",
     "lodash": "^4.17.15",
     "winston-transport": "^4.3.0"
   },

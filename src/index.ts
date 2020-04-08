@@ -1,16 +1,42 @@
 import sentry from '@sentry/node';
-import { isError } from '@sentry/utils/is';
 import _ from 'lodash';
 import TransportStream = require('winston-transport');
 
-import { Context } from './types';
+function isInstanceOf(wat: any, base: any): boolean {
+  try {
+    // tslint:disable-next-line:no-unsafe-any
+    return wat instanceof base;
+  } catch (_e) {
+    return false;
+  }
+}
+
+function isError(wat: any): boolean {
+  switch (Object.prototype.toString.call(wat)) {
+    case '[object Error]':
+      return true;
+    case '[object Exception]':
+      return true;
+    case '[object DOMException]':
+      return true;
+    default:
+      return isInstanceOf(wat, Error);
+  }
+}
+
+
+interface Context {
+  level?: any;
+  extra?: any;
+  fingerprint?: any;
+}
 
 const errorHandler = (err: any) => {
   // tslint:disable-next-line
   console.error(err);
 };
 
-export default class Sentry extends TransportStream {
+class Sentry extends TransportStream {
   protected name: string;
   protected tags: {[s: string]: any};
   protected sentryClient: typeof sentry;

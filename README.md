@@ -1,3 +1,10 @@
+# conscott
+
+Fork of original repo to push v1.0.12 release, which fixes `npm audit` issues.
+
+[npm page](https://www.npmjs.com/package/winston-sentry-log-conscott)
+
+
 # winston-sentry-log
 
 [Sentry](https://sentry.io) transport for the [winston](https://github.com/winstonjs/winston) v3 logger using [@sentry/node](https://github.com/getsentry/sentry-javascript).
@@ -12,12 +19,12 @@
 ## Install
 
 ```bash
-yarn add winston winston-sentry-log
+yarn add winston winston-sentry-log-conscott
 ```
 
 ## Usage
 
-You can configure `winston-sentry-log` in two different ways.
+You can configure `winston-sentry-log-conscott` in two different ways.
 
 With `new winston.Logger`:
 
